@@ -1,7 +1,15 @@
-import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "@phosphor-icons/react";
-import { SummaryCard, SummaryContainer } from "./styles";
+import {
+  ArrowCircleDown,
+  ArrowCircleUp,
+  CurrencyDollar,
+} from '@phosphor-icons/react';
+import { SummaryCard, SummaryContainer } from './styles';
+import { useContext } from 'react';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
 
 export function Summary() {
+  const { transactions } = useContext(TransactionsContext);
+
   return (
     <SummaryContainer>
       <SummaryCard>
@@ -31,5 +39,5 @@ export function Summary() {
         <strong>R$ 17.400,00</strong>
       </SummaryCard>
     </SummaryContainer>
-  )
+  );
 }
