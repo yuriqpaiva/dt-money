@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import * as Dialog from '@radix-ui/react-dialog';
-import * as RadioGroup from '@radix-ui/react-radio-group';
+import styled from 'styled-components'
+import * as Dialog from '@radix-ui/react-dialog'
+import * as RadioGroup from '@radix-ui/react-radio-group'
 
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
@@ -8,7 +8,7 @@ export const Overlay = styled(Dialog.Overlay)`
   height: 100vh;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.75);
-`;
+`
 
 export const Content = styled(Dialog.Content)`
   min-width: 32rem;
@@ -44,7 +44,7 @@ export const Content = styled(Dialog.Content)`
       height: 58px;
       border: 0;
       background-color: ${({ theme }) => theme['green-500']};
-      color: ${({ theme }) => theme['white']};
+      color: ${({ theme }) => theme.white};
       font-weight: bold;
       padding: 0 1.25rem;
       border-radius: 6px;
@@ -63,7 +63,7 @@ export const Content = styled(Dialog.Content)`
       }
     }
   }
-`;
+`
 
 export const CloseButton = styled(Dialog.Close)`
   position: absolute;
@@ -74,20 +74,22 @@ export const CloseButton = styled(Dialog.Close)`
   line-height: 0;
   cursor: pointer;
   color: ${({ theme }) => theme['gray-500']};
-`;
+`
 
 export const TransactionType = styled(RadioGroup.Root)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 0.5rem;
-`;
+`
 
 interface TransactionTypeButtonProps {
-  variant: 'income' | 'outcome';
+  variant: 'income' | 'outcome'
 }
 
-export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
+export const TransactionTypeButton = styled(
+  RadioGroup.Item,
+)<TransactionTypeButtonProps>`
   background-color: ${({ theme }) => theme['gray-700']};
   padding: 1rem;
   display: flex;
@@ -110,11 +112,12 @@ export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButt
   }
 
   &[data-state='checked'] {
-    color: ${({ theme }) => theme['white']};
-    background-color: ${({ theme, variant }) => variant === 'income' ? theme['green-500'] : theme['red-500'] };
+    color: ${({ theme }) => theme.white};
+    background-color: ${({ theme, variant }) =>
+      variant === 'income' ? theme['green-500'] : theme['red-500']};
 
     svg {
-      color: ${({ theme }) => theme['white']};
+      color: ${({ theme }) => theme.white};
     }
   }
-`;
+`
